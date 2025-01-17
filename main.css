@@ -160,24 +160,20 @@ body{
 
 .navbar{
     width: 100%;
-    display: block;
     background-color: #22223b;
     padding: 10px;
     color: #f2e9e4;
 }
 
 .intro{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
+    
 }
 
 .img{
-    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     animation: textSlide 1s ease;
-    margin: 15px 50px 15px 15px;
-
 }
 
 @keyframes textSlide {
@@ -187,15 +183,14 @@ body{
 } 
 
 .heading{
-    z-index: 1;
-    justify-content: center;
-    font-size: 25px;
+    font-size: 40px;
     animation: textSlide 1s ease;
+    padding-left: 8%;
 }
 
 @media (max-width : 500px){
     .heading{
-        font-size: 20px;
+        font-size: 10px;
     }
 }
 
@@ -212,8 +207,9 @@ button{
 }
 
 ul{
+    display: flex;
+    justify-content: space-evenly;
     list-style: none;
-    width: 300px;
     margin: 20px 10px 10px 10px;
 }
 
