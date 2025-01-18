@@ -159,22 +159,21 @@ body{
 }
 
 .navbar{
-    width: 100%;
+    background-image: url(Images/4.jpg);
+    background-size: cover;
     background-color: #22223b;
-    padding: 10px;
+    aspect-ratio: 3105 / 1603;
     color: #f2e9e4;
+    width: 100%;
 }
 
-.intro{
-    
-}
 
-.img{
+/*.img{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     animation: textSlide 1s ease;
-}
+} */
 
 @keyframes textSlide {
     from{ transform: translate(-252px);}
@@ -183,34 +182,48 @@ body{
 } 
 
 .heading{
-    font-size: 40px;
+    font-size: 5vw;
     animation: textSlide 1s ease;
-    padding-left: 8%;
+    padding-left: 62%;
+    padding-top: 13%;
 }
 
-@media (max-width : 500px){
-    .heading{
-        font-size: 10px;
+@media (min-width : 1000px) {
+
+    h6{
+        font-size: 1.3vw;
     }
 }
 
-button{
+@media (max-width : 500px){
+
+    h6{
+        font-size: 2vw;
+    }
+
+    .heading{
+        font-size: 6vw;
+    }
+}
+
+/* button{
     background-color: aqua;
     animation: changeColor 2s ease infinite;
 }
 
-@keyframes changeColor {
+ @keyframes changeColor {
     from{ background-color: black;}
     to{ background-color: white;} 
     from{ color: white;}
     to{ color: black;}    
-}
+} */
 
 ul{
     display: flex;
     justify-content: space-evenly;
     list-style: none;
-    margin: 20px 10px 10px 10px;
+    margin-left: 35%;
+    padding: 2%;
 }
 
 li a{
@@ -218,28 +231,26 @@ li a{
     margin-bottom: 1px;
     text-decoration: none;
     text-transform: uppercase;
-    border-radius: 5px;
-    padding: 10px ;
     color: #f2e9e4;
     transition: all 0.5s ease;
 }
 
 .active{
-    background-color: #4a4e69;
+    color: #22223b;
     /* border-style:solid;
     border-width: 2px;
     border-color: #f2e9e4; */
 }
 
 li a:hover:not(.active){
-    background-color: #9a8c98;
-    /* border-style:solid;
+    /*background-color: #9a8c98;
+    border-style:solid;
     border-width: 2px;
     border-color: #f2e9e4; */
-    color: #22223b;
+    color: #4a4e69;
 }
 
-h1:hover{
+/* h1:hover{
     color: gray
 }
 
@@ -325,5 +336,5 @@ h1:hover{
     from{ transform: rotate(0deg);}
     to{ transform: rotate(360deg);}
     
-}
+} */
 
