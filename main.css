@@ -159,21 +159,12 @@ body{
 }
 
 .navbar{
-    background-image: url(Images/4.jpg);
+    background-image: url(Images/3.jpg);
     background-size: cover;
-    background-color: #22223b;
-    aspect-ratio: 3105 / 1603;
+    aspect-ratio: 3105 / 1782;
     color: #f2e9e4;
     width: 100%;
 }
-
-
-/*.img{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    animation: textSlide 1s ease;
-} */
 
 @keyframes textSlide {
     from{ transform: translate(-100vw);}
@@ -189,10 +180,21 @@ body{
     padding-top: 13%;
 }
 
-@media (min-width : 1000px) {
+@media (min-width : 501px) and (max-width : 5000px){
+
+    .container-edu{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2vw;
+        margin-top: 3vw; 
+    }
 
     h6{
         font-size: 1.3vw;
+    }
+
+    .sub{
+        font-size: 0.6em;
     }
 
     main{
@@ -201,13 +203,27 @@ body{
 
     .container-edu-content{
         font-size: 1.5vw;
+        padding: 2vw;
+        border-radius: 1vw;
     }
 }
 
 @media (max-width : 500px){
 
+    .container-edu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4vw;
+        gap: 2vw;
+    }
+
     h6{
-        font-size: 2vw;
+        font-size: 3vw;
+    }
+
+    .sub{
+        font-size: 0.6em;
     }
 
     .heading{
@@ -215,11 +231,15 @@ body{
     }
 
     main{
-        font-size: 3vw;
+        font-size: 5vw;
     }
 
     .container-edu-content{
-        font-size: 3vw;
+        width: 80%;
+        flex-grow: 1;
+        font-size: 4vw;
+        padding: 4vw;
+        border-radius: 2vw;
     }
 }
 
@@ -239,8 +259,7 @@ ul{
     display: flex;
     justify-content: space-evenly;
     list-style: none;
-    margin-left: 35%;
-    padding: 2%;
+    padding-top: 1.5%;
 }
 
 li a{
@@ -249,7 +268,7 @@ li a{
     text-decoration: none;
     text-transform: uppercase;
     color: #f2e9e4;
-    transition: all 0.5s ease;
+    transition: all 0.1s ease;
 }
 
 /*.active{
@@ -268,27 +287,22 @@ li a:hover:not(.active){
 }
 
 main{
-    margin: 1vw;
+    margin: 4vw;
     color: #f2e9e4;
 }
 
-.container-edu{
-    margin-top: 1vw;
+h2{
+    padding-left: 3vw;
 }
 
 .container-edu-content{
-    margin-bottom: 1vw;
-    padding: 1vw;
     color: #22223b;
     background-color: #f2e9e4;
     border:#22223b solid 2px;
-    border-radius: 1vw;
-    transition: all 0.2s ease;
+    
 }
 
-.container-edu-content:hover{
-    margin: -0.5vw -1vw 0.5vw -1vw;
-}
+
 
 
 
