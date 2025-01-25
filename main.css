@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: #121212;
+    background-color: #202020;
 }
 
 .navbar{
@@ -40,6 +40,10 @@ li a:hover:not(.active){
     color: #22223b;
 }
 
+h6{
+    font-size: 2vw;
+}
+
 .heading{
     font-size: 5vw;
     color: #f2e9e4;
@@ -49,13 +53,43 @@ li a:hover:not(.active){
 }
 
 main{
+    margin: 6vw 4vw 4vw 4vw;
+    font-size: 3vw;
     color: #f2e9e4;
 }
 
-.container-edu-content ,.container-pro-content{
+h2{
+    padding-left: 2vw;
+}
+
+.container{
+    display: grid;
+    gap: 2vw;
+    margin-top: 3vw;
+    margin-bottom: 7vw;
+}
+
+.container-content{
+    font-size: 1.5vw;
+    padding: 2vw;
+    background-color: #161616;
+    border:#272727 solid 2px;
+    border-radius: 1vw;  
+}
+
+.sub{
+    font-size: 0.6em;
+}
+
+.link{
+    font-size: 1vw;
+    text-decoration: none;
+    padding: 0.3vw;
     color: #f2e9e4;
-    background-color: black;
-    border:#272727 solid 1px;   
+    background-color: #202020;
+    border: #272727 solid 2px;
+    border-radius: 0.5vw;
+    
 }
 
 @keyframes textSlide {
@@ -64,77 +98,22 @@ main{
     
 } 
 
-@media (max-width : 500px){
+@media (max-width : 767px){
 
-    h6{
-        font-size: 3vw;
-    }
-
-    .heading{
-        font-size: 5vw;
-    }
-
-    main{
-        margin: 6vw 4vw 4vw 4vw;
-        font-size: 5vw;
-    }
-
-    h2{
-        padding-left: 2vw;
-    }
-
-    .container-edu, .container-pro{
-        display: grid;
+    .container{
         place-items: center;
-        gap: 1vw;
-        margin-top: 3vw;
-        margin-bottom: 7vw;
     }
 
-    .container-edu-content, .container-pro-content{
+    .container-content{
         width: 90%;
-        font-size: 4vw;
-        padding: 4vw;
-        border-radius: 2vw;
-    }
-
-    .sub{
-        font-size: 0.6em;
     }
   
 }
 
-@media (min-width : 501px) and (max-width : 5000px){
+@media (min-width : 768px){
 
-    h6{
-        font-size: 1.3vw;
-    }
-
-    main{
-        margin: 6vw 4vw 4vw 4vw;
-        font-size: 2vw;
-    }
-
-    h2{
-        padding-left: 2vw;
-    }
-
-    .container-edu, .container-pro{
-        display: grid;
+    .container{
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 2vw;
-        margin-top: 3vw;
-        margin-bottom: 7vw; 
-    }
-
-    .container-edu-content, .container-pro-content{
-        font-size: 1.5vw;
-        padding: 2vw;
-        border-radius: 1vw;
-    }
-
-    .sub{
-        font-size: 0.6em;
     }
 
 }
