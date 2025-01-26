@@ -4,14 +4,18 @@
     margin: 0px;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: #202020;
 }
 
 .navbar{
-    background-image: url(Images/3.jpg);
+    background-image: url(Images/4.jpg);
     background-size: cover;
-    aspect-ratio: 3105 / 1782;
+    aspect-ratio: 3105 / 1603;
     color: #f2e9e4;
     width: 100%;
 }
@@ -45,14 +49,14 @@ li a:hover:not(.active){
 .heading{
     font-size: 5vw;
     color: #f2e9e4;
-    animation: textSlide 1s ease-out;
+    animation: textSlide 0.5s ease-out;
     padding-left: 62%;
-    padding-top: 13%;
+    padding-top: 15%;
 }
 
 main{
     margin: 3rem 2rem 2rem 2rem;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: #f2e9e4;
 }
 
@@ -67,12 +71,28 @@ h2{
     margin-bottom: 3rem;
 }
 
+.container-img{
+    border-radius: 0.7rem;
+    border: #272727 solid 2px;
+    background-color: #161616;
+    transition: all 0.5s ease;
+}
+
+.container-img img {
+    width: 100%; /* Fit image to container width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Prevent inline image spacing issues */
+    border-radius: 0.7rem 0.7rem 0 0; /* Add rounded corners only at the top */
+}
+
 .container-content{
     font-size: 0.7em;
-    padding: 1.5rem;
-    background-color: #161616;
-    border:#272727 solid 2px;
-    border-radius: 0.7rem;  
+    padding: 1.5rem;    
+}
+
+
+.container-img:hover{
+    background-color: black;
 }
 
 p{
@@ -90,9 +110,18 @@ p{
     color: #f2e9e4;
     background-color: #202020;
     border: #272727 solid 2px;
-    border-radius: 0.5em;
-    
+    border-radius: 0.5em;  
+    transition: all 0.3s ease-in;
 }
+
+.link:hover{
+    background-color: #f2e9e4;
+    color: #202020;
+}
+
+
+
+/*-- Animations & Media --*/
 
 @keyframes textSlide {
     from{ transform: translate(-100vw);}
@@ -137,12 +166,21 @@ p{
 
 }
 
+
+
+
+
+
+
+
+
+
 /* button{
     background-color: aqua;
     animation: changeColor 2s ease infinite;
 }
 
- @keyframes changeColor {
+@keyframes changeColor {
     from{ background-color: black;}
     to{ background-color: white;} 
     from{ color: white;}
@@ -155,11 +193,6 @@ p{
     border-width: 2px;
     border-color: #f2e9e4; 
 } */
-
-
-
-
-
 
 
 
