@@ -40,9 +40,7 @@ li a:hover:not(.active){
     color: #22223b;
 }
 
-h6{
-    font-size: 2vw;
-}
+
 
 .heading{
     font-size: 5vw;
@@ -53,28 +51,32 @@ h6{
 }
 
 main{
-    margin: 6vw 4vw 4vw 4vw;
-    font-size: 3vw;
+    margin: 3rem 2rem 2rem 2rem;
+    font-size: 1.8rem;
     color: #f2e9e4;
 }
 
 h2{
-    padding-left: 2vw;
+    text-align: center;
 }
 
 .container{
     display: grid;
-    gap: 2vw;
-    margin-top: 3vw;
-    margin-bottom: 7vw;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
 }
 
 .container-content{
-    font-size: 1.5vw;
-    padding: 2vw;
+    font-size: 0.7em;
+    padding: 1.5rem;
     background-color: #161616;
     border:#272727 solid 2px;
-    border-radius: 1vw;  
+    border-radius: 0.7rem;  
+}
+
+p{
+    font-size: 0.8em;
 }
 
 .sub{
@@ -82,13 +84,13 @@ h2{
 }
 
 .link{
-    font-size: 1vw;
+    font-size: 0.8em;
     text-decoration: none;
-    padding: 0.3vw;
+    padding: 0.3em;
     color: #f2e9e4;
     background-color: #202020;
     border: #272727 solid 2px;
-    border-radius: 0.5vw;
+    border-radius: 0.5em;
     
 }
 
@@ -99,6 +101,10 @@ h2{
 } 
 
 @media (max-width : 767px){
+
+    h6{
+        font-size: 2.5vw;
+    }
 
     .container{
         place-items: center;
@@ -112,8 +118,21 @@ h2{
 
 @media (min-width : 768px){
 
+    h6{
+        font-size: 1.5vw;
+    }
+
+    main{
+        font-size: 2.5rem;
+    }
+
     .container{
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .container-content{
+        font-size: 0.6em;
+        padding: 2rem;
     }
 
 }
