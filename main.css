@@ -64,18 +64,20 @@ h2{
     text-align: center;
 }
 
-.container{
+.container {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensure max 3 containers per row */
     gap: 1rem;
     margin-top: 2rem;
     margin-bottom: 3rem;
 }
 
-.container-img{
+.container-img {
     border-radius: 0.7rem;
     border: #272727 solid 2px;
     background-color: #161616;
     transition: all 0.5s ease;
+    overflow: hidden; /* Prevent content overflow */
 }
 
 .container-img img {
@@ -85,13 +87,12 @@ h2{
     border-radius: 0.7rem 0.7rem 0 0; /* Add rounded corners only at the top */
 }
 
-.container-content{
+.container-content {
     font-size: 0.7em;
-    padding: 1.5rem;    
+    padding: 1.5rem;
 }
 
-
-.container-img:hover{
+.container-img:hover {
     background-color: black;
 }
 
@@ -137,10 +138,6 @@ p{
 
     .container{
         place-items: center;
-    }
-
-    .container-content{
-        width: 90%;
     }
   
 }
