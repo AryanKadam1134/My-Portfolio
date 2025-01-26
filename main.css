@@ -49,8 +49,8 @@ li a:hover:not(.active){
 .heading{
     font-size: 5vw;
     color: #f2e9e4;
-    animation: textSlide 0.5s ease-out;
-    padding-left: 62%;
+    animation: textSlide 0.5s ease-in-out alternate infinite;
+    padding-left: 60%;
     padding-top: 15%;
 }
 
@@ -125,8 +125,8 @@ p{
 /*-- Animations & Media --*/
 
 @keyframes textSlide {
-    from{ transform: translate(-100vw);}
-    to{ transform: translate(0px);}
+    from{ transform: translate(-1vw);}
+    to{ transform: translate(1vw);}
     
 } 
 
