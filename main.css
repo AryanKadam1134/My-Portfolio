@@ -94,6 +94,7 @@ h2{
 
 .container-img:hover {
     background-color: black;
+    transform: scale(1.03);
 }
 
 p{
