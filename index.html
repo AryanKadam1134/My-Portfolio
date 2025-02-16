@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Kanit:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script defer src="animations.js"></script>
 </head>
 <body>
     <header>
@@ -23,10 +24,10 @@
         </div>              
     </header>  
     <main>
-        <section id="projects">
+        <section id="projects" class="fade-in">
             <h2>Projects</h2>
             <div class="container">
-                <div class="container-img">
+                <div class="container-img fade-in">
                     <img src="Images/2025-01-26_20-06.png">
                     <div class="container-content">
                         <b>VConnect</b></br></br>
@@ -42,7 +43,7 @@
                         <a class="link" href="https://vconnect-ecru.vercel.app/" target="_blank"><b>Visit site</b></a>
                     </div>
                 </div>
-                <div class="container-img">
+                <div class="container-img fade-in">
                     <img src="Images/2025-01-26_20-07.png">
                     <div class="container-content">
                         <b>EcoPlace</b></br></br>
@@ -59,7 +60,7 @@
                         <a class="link" href="https://eco-place-cyan.vercel.app/" target="_blank"><b>Visit site</b></a>
                     </div>
                 </div>
-                <div class="container-img">
+                <div class="container-img fade-in">
                     <img src="Images/Screenshot 2025-02-09 042137.png">
                     <div class="container-content">
                         <b>ArtisanConnect</b></br></br>
@@ -70,11 +71,11 @@
                             <span class="tech">TypeScript</span>
                             <span class="tech">Supabase</span>
                         </div></br>
-                        <a class="link" href="" target="_blank"><b>GitHub</b></a>
+                        <a class="link" href="https://github.com/AryanKadam1134/ArtisanConnect.git" target="_blank"><b>GitHub</b></a>
                         <a class="link" href="https://artisan-connect-exchange.vercel.app/" target="_blank"><b>Visit site</b></a>
                     </div>
                 </div>
-                <div class="container-img">
+                <div class="container-img fade-in">
                     <img src="Images/WhatsApp Image 2025-02-03 at 20.01.41.jpeg">
                     <div class="container-content">
                         <b>Image Caption Generator</b></br></br>
@@ -84,10 +85,10 @@
                             <span class="tech">TailwindCSS</span>
                             <span class="tech">Flask</span>
                         </div></br>
-                        <a class="link" href="" target="_blank"><b>GitHub</b></a>
+                        <a class="link" href="https://github.com/AryanKadam1134/Image-Caption-Generator.git" target="_blank"><b>GitHub</b></a>
                     </div>
                 </div>
-                <div class="container-img">
+                <div class="container-img fade-in">
                     <img src="Images/2025-01-26_21-08.png">
                     <div class="container-content">
                         <b>Portfolio</b></br></br>
@@ -95,6 +96,7 @@
                         <div class="tech-stack">
                             <span class="tech">HTML</span>
                             <span class="tech">CSS</span>
+                            <span class="tech">JavaScript</span>
                         </div></br>
                         <a class="link" href="https://github.com/AryanKadam1134/My-Portfolio.git" target="_blank"><b>GitHub</b></a>
                         <a class="link" href="https://my-portfolio-two-alpha-84.vercel.app/" target="_blank"><b>Visit site</b></a>
@@ -106,10 +108,10 @@
             <div>
             </div>
         </section>
-        <section id="education">
+        <section id="education" class="fade-in">
             <h2>Education</h2>
             <div class="container">
-                <div class="container-img">
+                <div class="container-img fade-in">
                     <img src="https://lh3.googleusercontent.com/p/AF1QipMf9vU_BD9hQH7x7paDhFaTcP-UhOrIR8lvDgxh=s680-w680-h510">
                     <div class="container-content">
                         <div class="sub">Board</div>
@@ -121,7 +123,7 @@
                         <b>68%</b>
                     </div>
                 </div>
-                <div class="container-img">
+                <div class="container-img fade-in">
                     <img src="https://www.ssrkt.edu.in/upload/institude/large/1707720117_1701512872_new_banner1.jpg">
                     <div class="container-content">
                         <div class="sub">Board</div>
@@ -132,7 +134,7 @@
                         <b>80.5%</b>
                     </div>
                 </div>
-                <div class="container-img">
+                <div class="container-img fade-in">
                     <img src="Images/WhatsApp Image 2025-01-26 at 20.16.58.jpeg">
                     <div class="container-content">
                         <div class="sub">University</div>
@@ -163,5 +165,6 @@
             </div>
         </section>
     </footer>
+    <div class="scroll-progress"></div>
 </body>
 </html>
