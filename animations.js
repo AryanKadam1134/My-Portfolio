@@ -1,16 +1,15 @@
 const observerOptions = {
     root: null,
-    threshold: 0.1, // Lower threshold for earlier trigger
-    rootMargin: "0px 0px -50px 0px" // Negative bottom margin to trigger earlier
+    threshold: 0.15, // Slightly increased for earlier trigger
+    rootMargin: "50px" // Positive margin to trigger earlier
 };
 
 const scrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
+            // Removed setTimeout for immediate response
             requestAnimationFrame(() => {
-                setTimeout(() => {
-                    entry.target.classList.add('show');
-                }, entry.target.dataset.delay || 0);
+                entry.target.classList.add('show');
             });
         }
     });
@@ -18,9 +17,14 @@ const scrollObserver = new IntersectionObserver((entries) => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const hiddenElements = document.querySelectorAll('.fade-in');
-    // Reduced delay between elements
+    // Removed delay for mobile
+    const isMobile = window.innerWidth <= 768;
+    
     hiddenElements.forEach((el, index) => {
-        el.dataset.delay = index * 50; // Reduced from 100ms to 50ms
+        // Add minimal delay only on desktop
+        if (!isMobile) {
+            el.dataset.delay = index * 30; // Reduced delay
+        }
         scrollObserver.observe(el);
     });
     
