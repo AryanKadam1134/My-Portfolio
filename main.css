@@ -33,7 +33,7 @@ li a{
     text-decoration: none;
     text-transform: uppercase;
     color: #f2e9e4;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
 }
 
 li a:hover:not(.active){
@@ -56,7 +56,15 @@ li a:hover:not(.active){
     color: #f2e9e4;
     /* animation: textSlide 0.5s ease-in-out alternate infinite; */
     padding-left: 60%;
-    padding-top: 15%;
+    padding-top: 15%; 
+}
+
+.heading a{
+    transition: all 0.1s ease;
+}
+
+.heading a:hover{
+    color: black;
 }
 
 .social-links {
