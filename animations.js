@@ -1,22 +1,28 @@
 const observerOptions = {
     root: null,
-    threshold: 0.15, // Reduced threshold for earlier triggering
-    rootMargin: "0px" // Changed from -50px to trigger animations sooner
+    threshold: 0.1, // Lower threshold for earlier trigger
+    rootMargin: "0px 0px -50px 0px" // Negative bottom margin to trigger earlier
 };
 
-// Scroll animation for containers
 const scrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('show');
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    entry.target.classList.add('show');
+                }, entry.target.dataset.delay || 0);
+            });
         }
     });
 }, observerOptions);
 
-// Observe all elements with fade-in class
 document.addEventListener('DOMContentLoaded', () => {
     const hiddenElements = document.querySelectorAll('.fade-in');
-    hiddenElements.forEach((el) => scrollObserver.observe(el));
+    // Reduced delay between elements
+    hiddenElements.forEach((el, index) => {
+        el.dataset.delay = index * 50; // Reduced from 100ms to 50ms
+        scrollObserver.observe(el);
+    });
     
     // Add scroll progress functionality
     const scrollProgress = document.querySelector('.scroll-progress');
