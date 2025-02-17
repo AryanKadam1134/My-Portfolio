@@ -32,6 +32,15 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
+/* Fix for white transparent strip */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: var(--primary-bg);
+    overflow-x: hidden;
+}
+
 /* Update the animation classes at the top */
 .fade-in {
     opacity: 0;
@@ -260,6 +269,7 @@ main {
     position: relative;
     z-index: 1;
     background: transparent;
+    padding-bottom: 50px; /* Add padding to prevent content from being cut off */
 }
 
 h2{
@@ -872,6 +882,22 @@ section.show {
         animation-duration: 100s;
         will-change: transform;
     }
+
+    #stars-container {
+        height: 100%;
+        position: fixed;
+        background-attachment: fixed;
+    }
+
+    #stars2, #stars3 {
+        display: none; /* Reduce layers for better performance */
+    }
+
+    #stars {
+        will-change: transform;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -1015,6 +1041,7 @@ section.show {
     -webkit-transform: translateZ(0);
     backface-visibility: hidden;
     perspective: 1000px;
+    will-change: transform;
 }
 
 #stars, #stars2, #stars3 {
