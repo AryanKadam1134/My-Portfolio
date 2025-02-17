@@ -36,8 +36,9 @@ function initializeUI() {
     });
 
     createTwinklingStars();
-    setupNavigation();
-    setupScrollProgress();
+    // Remove these undefined function calls
+    // setupNavigation();
+    // setupScrollProgress();
 }
 
 // Single scroll event handler for all scroll-based effects
