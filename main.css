@@ -24,10 +24,11 @@ html {
 }
 
 body {
-    background: var(--primary-bg);
+    margin: 0;
+    padding: 0;
     min-height: 100vh;
-    position: relative;
     color: var(--text-primary);
+    background: var(--primary-bg);
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
 }
@@ -270,6 +271,8 @@ main {
     z-index: 1;
     background: transparent;
     padding-bottom: 50px; /* Add padding to prevent content from being cut off */
+    min-height: calc(100vh - 80px); /* Subtract navbar height */
+    padding-bottom: 0; /* Remove extra padding */
 }
 
 h2{
@@ -871,6 +874,7 @@ section.show {
         position: relative;
         z-index: 1;
         background: transparent;
+        min-height: calc(100vh - 60px); /* Adjust for mobile navbar height */
     }
 
     /* Optimize star animations for better performance */
@@ -897,6 +901,12 @@ section.show {
         will-change: transform;
         transform: translateZ(0);
         backface-visibility: hidden;
+    }
+
+    /* Remove any additional bottom margins/paddings */
+    section:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
 }
 
