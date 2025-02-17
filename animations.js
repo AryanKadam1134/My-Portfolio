@@ -322,3 +322,24 @@ window.addEventListener('scroll', () => {
 document.addEventListener('DOMContentLoaded', () => {
     handleMobileMenu();
 });
+
+// Add this to animations.js
+document.addEventListener('DOMContentLoaded', () => {
+    // Wait for all images to load
+    Promise.all(Array.from(document.images).map(img => {
+        if (img.complete)
+            return Promise.resolve();
+        return new Promise(resolve => {
+            img.addEventListener('load', resolve);
+            img.addEventListener('error', resolve); // Handle error cases too
+        });
+    }))
+    .then(() => {
+        // Initialize everything after images are loaded
+        setTimeout(() => {
+            document.body.classList.add('loaded');
+            initializeUI();
+            handleMobileMenu();
+        }, 500); // Add small delay for smoother transition
+    });
+});
