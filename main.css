@@ -24,10 +24,12 @@ html {
 }
 
 body {
-    background: transparent;
+    background: var(--primary-bg);
     min-height: 100vh;
     position: relative;
     color: var(--text-primary);
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Update the animation classes at the top */
@@ -255,7 +257,9 @@ main {
     margin: 3rem 2rem 2rem 2rem;
     font-size: 1.6rem;
     color: #f2e9e4;
-    
+    position: relative;
+    z-index: 1;
+    background: transparent;
 }
 
 h2{
@@ -845,6 +849,29 @@ section.show {
         opacity: 1;
         visibility: visible;
     }
+
+    html, body {
+        overflow-x: hidden;
+        position: relative;
+        width: 100%;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    main {
+        position: relative;
+        z-index: 1;
+        background: transparent;
+    }
+
+    /* Optimize star animations for better performance */
+    #stars2, #stars3 {
+        display: none;
+    }
+
+    #stars {
+        animation-duration: 100s;
+        will-change: transform;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -984,6 +1011,10 @@ section.show {
     background: linear-gradient(to bottom, #0a0a1f, #1a1a3c);
     background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
     background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
 }
 
 #stars, #stars2, #stars3 {
