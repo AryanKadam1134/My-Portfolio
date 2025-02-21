@@ -1631,3 +1631,124 @@ body.loaded .loader-wrapper {
         font-size: 1.3rem;
     }
 }
+
+/* Add these styles to main.css */
+.about-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 400px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.2);
+    border: 1px solid rgba(79, 70, 229, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.02);
+}
+
+.about-content {
+    flex: 1.5;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+}
+
+.about-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid rgba(79, 70, 229, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.detail-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.detail-item i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.detail-item span {
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+/* Mobile responsive styles */
+@media screen and (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        padding: 0 1rem;
+        gap: 2rem;
+    }
+
+    .about-image {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .about-text {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .about-details {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .detail-item {
+        padding: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-image {
+        max-width: 250px;
+    }
+
+    .about-text {
+        font-size: 0.9rem;
+    }
+
+    .detail-item {
+        padding: 0.6rem;
+    }
+
+    .detail-item i {
+        font-size: 1.2rem;
+    }
+
+    .detail-item span {
+        font-size: 0.9rem;
+    }
+}
