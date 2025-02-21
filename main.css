@@ -214,6 +214,37 @@ li a{
     width: 2rem;
 }
 
+/* Add these styles */
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background: var(--accent-color);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.contact-btn i {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.contact-btn:hover i {
+    transform: translateX(3px);
+}
 
 /* Continue for all letters */
 
@@ -960,6 +991,11 @@ section.show {
         animation: none;
         opacity: 0.5;
     }
+
+    .contact-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -982,6 +1018,11 @@ section.show {
 
     .social-links a {
         font-size: 1.6rem;  /* Increased from 1.3rem */
+    }
+
+    .contact-btn {
+        padding: 0.4rem 0.9rem;
+        font-size: 0.8rem;
     }
 }
 
