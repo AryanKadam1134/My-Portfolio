@@ -63,26 +63,36 @@ function handleScroll() {
     updateActiveNavLink();
 }
 
-// Add mobile menu functionality
+// Update mobile menu functionality
 function handleMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     const body = document.body;
-    const overlay = document.createElement('div');
-    overlay.className = 'nav-overlay';
-    document.body.appendChild(overlay);
+    
+    // Create overlay if it doesn't exist
+    let overlay = document.querySelector('.nav-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'nav-overlay';
+        document.body.appendChild(overlay);
+    }
 
-    // Toggle menu
     function toggleMenu() {
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
         overlay.classList.toggle('active');
-        body.style.overflow = body.style.overflow === 'hidden' ? '' : 'hidden';
+        body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
     }
 
+    // Remove existing event listeners
+    const newHamburger = hamburger.cloneNode(true);
+    hamburger.parentNode.replaceChild(newHamburger, hamburger);
+    const newOverlay = overlay.cloneNode(true);
+    overlay.parentNode.replaceChild(newOverlay, overlay);
+
     // Add click events
-    hamburger.addEventListener('click', toggleMenu);
-    overlay.addEventListener('click', toggleMenu);
+    newHamburger.addEventListener('click', toggleMenu);
+    newOverlay.addEventListener('click', toggleMenu);
 
     // Close menu when clicking links
     navLinks.querySelectorAll('a').forEach(link => {
@@ -91,6 +101,13 @@ function handleMobileMenu() {
                 toggleMenu();
             }
         });
+    });
+
+    // Close menu on resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+            toggleMenu();
+        }
     });
 }
 
@@ -343,3 +360,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 500); // Add small delay for smoother transition
     });
 });
+
+// Initialize mobile menu
+document.addEventListener('DOMContentLoaded', handleMobileMenu);
