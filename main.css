@@ -10,6 +10,7 @@
     --gradient-end: #171923;
     --card-bg: rgba(17, 17, 26, 0.7);
     --transition: all 0.3s ease;
+    --transition-duration: 0.5s;
 }
 
 * {
@@ -46,8 +47,8 @@ html, body {
 .fade-in {
     opacity: 0;
     transform: translateY(20px); /* Reduced distance */
-    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Reduced duration */
+    transition: opacity var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1),
+                transform var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1); /* Reduced duration */
     will-change: opacity, transform;
 }
 
@@ -924,6 +925,40 @@ section.show {
     section:last-child {
         margin-bottom: 0;
         padding-bottom: 0;
+    }
+
+    html {
+        scroll-padding-top: 60px; /* Reduced scroll padding for mobile */
+    }
+
+    body {
+        scroll-behavior: auto; /* Native scrolling on mobile */
+    }
+
+    /* Reduce animation distance on mobile */
+    .fade-in {
+        transform: translateY(10px);
+    }
+
+    /* Optimize transitions for mobile */
+    .container-img,
+    .nav-links,
+    .social-links a,
+    .skill-item,
+    .detail-item {
+        transition-duration: 0.3s;
+    }
+
+    /* Disable parallax effects on mobile for better performance */
+    #stars-container {
+        transform: none !important;
+        will-change: auto;
+    }
+
+    /* Optimize background effects */
+    #stars, #stars2, #stars3 {
+        animation: none;
+        opacity: 0.5;
     }
 }
 

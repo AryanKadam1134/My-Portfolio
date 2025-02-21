@@ -1,7 +1,7 @@
 const observerOptions = {
     root: null,
-    threshold: 0.15,
-    rootMargin: "50px"
+    threshold: 0.1, // Reduced threshold for faster triggering
+    rootMargin: window.innerWidth <= 768 ? "30px" : "50px" // Smaller margin for mobile
 };
 
 // Single scroll observer for all fade-in elements
@@ -124,13 +124,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        const headerOffset = 80;
+        const headerOffset = window.innerWidth <= 768 ? 60 : 80; // Reduced offset for mobile
         const elementPosition = target.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
         window.scrollTo({
             top: offsetPosition,
-            behavior: 'smooth'
+            behavior: window.innerWidth <= 768 ? 'auto' : 'smooth' // Faster scrolling on mobile
         });
     });
 });
@@ -363,3 +363,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Initialize mobile menu
 document.addEventListener('DOMContentLoaded', handleMobileMenu);
+
+// Update transition duration in CSS
+const updateTransitionDuration = () => {
+    const isMobile = window.innerWidth <= 768;
+    document.documentElement.style.setProperty(
+        '--transition-duration', 
+        isMobile ? '0.3s' : '0.5s'
+    );
+};
+
+// Call on load and resize
+window.addEventListener('DOMContentLoaded', updateTransitionDuration);
+window.addEventListener('resize', updateTransitionDuration);
