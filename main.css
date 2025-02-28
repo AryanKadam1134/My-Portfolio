@@ -1100,6 +1100,37 @@ section.show {
     color: #f2e9e4;
 }
 
+.skill-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: brightness(1.1);
+    /* Added background for better visibility of white logos */
+    background: transparent;
+    padding: 2px;
+}
+
+/* Specific styling for Supabase logo which has a dark background */
+.skill-item img[alt="Supabase"] {
+    border-radius: 4px;
+    padding: 3px;
+}
+
+/* Mobile responsive adjustments */
+@media screen and (max-width: 768px) {
+    .skill-item img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .skill-item img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
 /* Responsive styles */
 @media screen and (max-width: 768px) {
     .skill-grid {
