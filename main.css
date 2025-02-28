@@ -234,7 +234,7 @@ li a{
 .contact-btn:hover {
     background: var(--accent-color);
     color: var(--text-primary);
-    transform: translateY(-2px);
+    transform: scale(1.05);
 }
 
 .contact-btn i {
