@@ -1110,12 +1110,6 @@ section.show {
     padding: 2px;
 }
 
-/* Specific styling for Supabase logo which has a dark background */
-.skill-item img[alt="Supabase"] {
-    border-radius: 4px;
-    padding: 3px;
-}
-
 /* Mobile responsive adjustments */
 @media screen and (max-width: 768px) {
     .skill-item img {
