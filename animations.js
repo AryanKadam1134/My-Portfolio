@@ -1,7 +1,8 @@
+// Update observer options for faster mobile transitions
 const observerOptions = {
     root: null,
-    threshold: 0.1, // Reduced threshold for faster triggering
-    rootMargin: window.innerWidth <= 768 ? "30px" : "50px" // Smaller margin for mobile
+    threshold: window.innerWidth <= 768 ? 0.05 : 0.1, // Lower threshold for mobile
+    rootMargin: window.innerWidth <= 768 ? "20px" : "50px" // Reduced margin for mobile
 };
 
 // Single scroll observer for all fade-in elements
@@ -41,26 +42,20 @@ function initializeUI() {
     // setupScrollProgress();
 }
 
-// Single scroll event handler for all scroll-based effects
+// Update scroll timing
 function handleScroll() {
-    const scrolled = window.pageYOffset;
-    const navbar = document.querySelector('.navbar');
-    const scrollProgress = document.querySelector('.scroll-progress');
-    
-    // Update navbar
-    const isScrolled = scrolled > 50;
-    navbar.style.background = `rgba(10, 10, 15, ${isScrolled ? '0.85' : '0.65'})`;
-    navbar.style.backdropFilter = `blur(${isScrolled ? '12px' : '8px'})`;
-    
-    // Update scroll progress
-    if (scrollProgress) {
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const progress = (scrolled / height) * 100;
-        scrollProgress.style.transform = `scaleX(${progress / 100})`;
-    }
+    requestAnimationFrame(() => {
+        const scrolled = window.pageYOffset;
+        const navbar = document.querySelector('.navbar');
+        const scrollProgress = document.querySelector('.scroll-progress');
 
-    // Update active nav link
-    updateActiveNavLink();
+        // Faster scroll progress update
+        if (scrollProgress) {
+            const height = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrolled / height) * 100;
+            scrollProgress.style.transform = `scaleX(${progress / 100})`;
+        }
+    });
 }
 
 // Update mobile menu functionality

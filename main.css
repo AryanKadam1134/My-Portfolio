@@ -1860,3 +1860,40 @@ body.loaded .loader-wrapper {
         font-size: 0.9rem;
     }
 }
+
+/* Update section spacing */
+section {
+    margin-bottom: 8rem; /* Increased from default */
+    padding-top: 2rem;
+}
+
+/* Adjust last section margin */
+section:last-child {
+    margin-bottom: 4rem;
+}
+
+/* Update section transitions for faster mobile scrolling */
+@media screen and (max-width: 768px) {
+    section {
+        margin-bottom: 6rem; /* Slightly reduced for mobile */
+    }
+
+    /* Faster transitions on mobile */
+    .fade-in {
+        transition-duration: 0.2s; /* Reduced from 0.3s */
+        transform: translateY(8px); /* Reduced distance */
+    }
+
+    section {
+        transition: all 0.4s cubic-bezier(0.33, 1, 0.68, 1); /* Faster transition */
+    }
+
+    /* Optimize scroll behavior */
+    html {
+        scroll-behavior: auto; /* Native scrolling for better performance */
+    }
+
+    body {
+        -webkit-overflow-scrolling: touch; /* Smoother iOS scrolling */
+    }
+}
