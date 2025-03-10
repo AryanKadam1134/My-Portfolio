@@ -270,12 +270,6 @@ li a{
     transition: transform 0.3s ease;
 }
 
-.social-links a:hover {
-    transform: scale(1.2);
-    color: var(--accent-color);
-    transform: translateY(-5px);
-}
-
 social-links a::after {
     content: '';
     position: absolute;
@@ -1108,6 +1102,19 @@ section.show {
     /* Added background for better visibility of white logos */
     background: transparent;
     padding: 2px;
+}
+
+/* Add after your existing skill-item styles */
+.skill-item img[alt="Git"] {
+    filter: brightness(1.2);
+    padding: 4px;
+}
+
+.skill-item img[alt="GitHub"] {
+    filter: brightness(1.75);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px;
+    border-radius: 4px;
 }
 
 /* Mobile responsive adjustments */
