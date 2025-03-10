@@ -1897,3 +1897,36 @@ section:last-child {
         -webkit-overflow-scrolling: touch; /* Smoother iOS scrolling */
     }
 }
+
+/* Update hero section styles for mobile */
+@media screen and (max-width: 768px) {
+    .hero-section {
+        display: none; /* Hide entire hero section on mobile */
+    }
+
+    /* Adjust spacing for content after hero section */
+    main {
+        margin-top: 60px; /* Account for navbar height */
+    }
+
+    #about {
+        padding-top: 2rem;
+    }
+
+    /* Adjust mobile navbar spacing */
+    .navbar {
+        background: rgba(10, 10, 15, 0.95);
+        backdrop-filter: blur(12px);
+    }
+}
+
+/* Ensure proper spacing on desktop */
+@media screen and (min-width: 769px) {
+    .hero-section {
+        display: block;
+    }
+
+    main {
+        margin-top: 0;
+    }
+}
