@@ -371,3 +371,90 @@ const updateTransitionDuration = () => {
 // Call on load and resize
 window.addEventListener('DOMContentLoaded', updateTransitionDuration);
 window.addEventListener('resize', updateTransitionDuration);
+
+// Certificates section animations
+const certificateCards = document.querySelectorAll('.certificate-card');
+const certificatesSection = document.querySelector('#certificates');
+
+const animateCertificates = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            if (entry.target === certificatesSection) {
+                entry.target.classList.add('active');
+            } else {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+            observer.unobserve(entry.target);
+        }
+    });
+};
+
+const certificatesObserver = new IntersectionObserver(animateCertificates, {
+    threshold: 0.2,
+    rootMargin: '0px'
+});
+
+if (certificatesSection) {
+    certificatesObserver.observe(certificatesSection);
+    certificateCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transitionDelay = `${index * 0.1}s`;
+        certificatesObserver.observe(card);
+    });
+}
+
+// Contact form handling
+const contactForm = document.getElementById('contact-form');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const submitBtn = contactForm.querySelector('.submit-btn');
+        const originalBtnText = submitBtn.innerHTML;
+        
+        // Show loading state
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+
+        // Get form data
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+            // Here you would typically send the data to your backend
+            // For now, we'll simulate a successful submission
+            await new Promise(resolve => setTimeout(resolve, 1500));
+
+            // Show success message
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Sent Successfully!';
+            submitBtn.style.background = '#22c55e';
+            
+            // Reset form
+            contactForm.reset();
+
+            // Reset button after 3 seconds
+            setTimeout(() => {
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.style.background = '';
+                submitBtn.disabled = false;
+            }, 3000);
+
+        } catch (error) {
+            console.error('Error sending message:', error);
+            
+            // Show error message
+            submitBtn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Failed to Send';
+            submitBtn.style.background = '#ef4444';
+
+            // Reset button after 3 seconds
+            setTimeout(() => {
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.style.background = '';
+                submitBtn.disabled = false;
+            }, 3000);
+        }
+    });
+}
